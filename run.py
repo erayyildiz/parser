@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-
-import argparse
 import os
-from parser.cmds import Evaluate, Predict, Train
-from parser.config import Config
+import argparse
+from cmds import Evaluate, Predict, Train
+from config import Config
 
 import torch
 
@@ -29,7 +28,7 @@ if __name__ == '__main__':
                                help='ID of GPU to use')
         subparser.add_argument('--seed', '-s', default=1, type=int,
                                help='seed for generating random numbers')
-        subparser.add_argument('--threads', '-t', default=16, type=int,
+        subparser.add_argument('--threads', '-t', default=2, type=int,
                                help='max num of threads')
         subparser.add_argument('--tree', action='store_true',
                                help='whether to ensure well-formedness')
@@ -38,9 +37,9 @@ if __name__ == '__main__':
                                help='choices of additional features')
     args = parser.parse_args()
 
-    print(f"Set the max num of threads to {args.threads}")
-    print(f"Set the seed for generating random numbers to {args.seed}")
-    print(f"Set the device with ID {args.device} visible")
+    print("Set the max num of threads to {}".format(args.threads))
+    print("Set the seed for generating random numbers to {}".format(args.seed))
+    print("Set the device with ID {} visible".format(args.device))
     torch.set_num_threads(args.threads)
     torch.manual_seed(args.seed)
     os.environ['CUDA_VISIBLE_DEVICES'] = args.device
@@ -49,10 +48,10 @@ if __name__ == '__main__':
     args.model = os.path.join(args.file, 'model')
     args.device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-    print(f"Override the default configs with parsed arguments")
+    print("Override the default configs with parsed arguments")
     args = Config(args.conf).update(vars(args))
     print(args)
 
-    print(f"Run the subcommand in mode {args.mode}")
+    print("Run the subcommand in mode {}".format(args.mode))
     cmd = subcommands[args.mode]
     cmd(args)
