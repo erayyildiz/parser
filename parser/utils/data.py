@@ -2,7 +2,7 @@
 
 from collections.abc import Iterable
 from itertools import chain
-from parser.utils.alg import kmeans
+from utils.alg import kmeans
 
 import torch
 from torch.nn.utils.rnn import pad_sequence

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from collections import Counter
-from parser.utils.vocab import Vocab
+from utils.vocab import Vocab
 
 import torch
 

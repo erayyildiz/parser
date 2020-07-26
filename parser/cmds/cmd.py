@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import os
-from parser.utils import Embedding
-from parser.utils.alg import eisner
-from parser.utils.common import bos, pad, unk
-from parser.utils.corpus import CoNLL, Corpus
-from parser.utils.field import BertField, CharField, Field
-from parser.utils.fn import ispunct
-from parser.utils.metric import Metric
+from utils import Embedding
+from utils.alg import eisner
+from utils.common import bos, pad, unk
+from utils.corpus import CoNLL, Corpus
+from utils.field import BertField, CharField, Field
+from utils.fn import ispunct
+from utils.metric import Metric
 
 import torch
 import torch.nn as nn

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from parser import Model
-from parser.cmds.cmd import CMD
-from parser.utils.corpus import Corpus
-from parser.utils.data import TextDataset, batchify
+from model import Model
+from cmds.cmd import CMD
+from utils.corpus import Corpus
+from utils.data import TextDataset, batchify
 
 
 class Evaluate(CMD):

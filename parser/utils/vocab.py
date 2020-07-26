@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from collections.abc import Iterable
-from parser.utils.common import unk
+from utils.common import unk
 
 
 class Vocab(object):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from parser.modules import CHAR_LSTM, MLP, BertEmbedding, Biaffine, BiLSTM
-from parser.modules.dropout import IndependentDropout, SharedDropout
+from modules import CHAR_LSTM, MLP, BertEmbedding, Biaffine, BiLSTM
+from modules.dropout import IndependentDropout, SharedDropout
 
 import torch
 import torch.nn as nn

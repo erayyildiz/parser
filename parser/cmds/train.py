@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime, timedelta
-from parser import Model
-from parser.cmds.cmd import CMD
-from parser.utils.corpus import Corpus
-from parser.utils.data import TextDataset, batchify
-from parser.utils.metric import Metric
+from model import Model
+from cmds.cmd import CMD
+from utils.corpus import Corpus
+from utils.data import TextDataset, batchify
+from utils.metric import Metric
 
 import torch
 import torch.nn as nn
@@ -29,7 +29,7 @@ class Train(CMD):
                                help='path to dev file')
         subparser.add_argument('--ftest', default='data/ptb/test.conllx',
                                help='path to test file')
-        subparser.add_argument('--fembed', default='data/glove.6B.100d.txt',
+        subparser.add_argument('--fembed', default=None,
                                help='path to pretrained embeddings')
         subparser.add_argument('--unk', default='unk',
                                help='unk token in pretrained embeddings')

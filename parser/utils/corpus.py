@@ -2,12 +2,12 @@
 
 from collections import namedtuple
 from collections.abc import Iterable
-from parser.utils.field import Field
+from utils.field import Field
 
 CoNLL = namedtuple(typename='CoNLL',
                    field_names=['ID', 'FORM', 'LEMMA', 'CPOS', 'POS',
-                                'FEATS', 'HEAD', 'DEPREL', 'PHEAD', 'PDEPREL'],
-                   defaults=[None]*10)
+                                'FEATS', 'HEAD', 'DEPREL', 'PHEAD', 'PDEPREL'])
+CoNLL.__new__.__defaults__ = (None,) * len(CoNLL._fields)
 
 
 class Sentence(object):
